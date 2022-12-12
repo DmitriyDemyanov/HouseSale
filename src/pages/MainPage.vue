@@ -12,6 +12,7 @@
     <InSideHouse :infoHouse="info" v-for="(info, index) in getInteriorHouse" :key="index"/>
   </div>
   <AboutCompany/>
+  <BookPhone/>
   </BContainer>
   </div>
 </template>
@@ -20,6 +21,7 @@
 import ButtonBlock from '@/components/ButtonBlock';
 import InSideHouse from '@/components/InSideHouse';
 import AboutCompany from '@/components/AboutCompany';
+import BookPhone from '@/components/BookPhone';
 
 import { mapGetters } from 'vuex';
 export default {
@@ -31,6 +33,7 @@ export default {
     ButtonBlock,
     InSideHouse,
     AboutCompany,
+    BookPhone,
   }
 }
 </script>
