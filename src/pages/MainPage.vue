@@ -9,11 +9,19 @@
     </div>
     <BContainer>
       <div class="d-flex">
-    <InSideHouse :infoHouse="info" v-for="(info, index) in getInteriorHouse" :key="index"/>
-  </div>
-  <AboutCompany/>
-  <BookPhone/>
-  </BContainer>
+        <InSideHouse :infoHouse="info" v-for="(info, index) in getInteriorHouse" :key="index" />
+      </div>
+      <AboutCompany />
+      <BookPhone />
+      <div class="title-houses">More ideas and inspiration</div>
+      <div class="d-flex flex-wrap">
+        <SectionHouses :catalog="item" v-for="(item, index) in getCatalogHouses" :key="index"/>
+      </div>
+      <MoreCollection/>
+      <div class="bar"></div>
+      <FurnishingRange/>
+    </BContainer>
+    <FooterSection/>
   </div>
 </template>
 
@@ -22,18 +30,27 @@ import ButtonBlock from '@/components/ButtonBlock';
 import InSideHouse from '@/components/InSideHouse';
 import AboutCompany from '@/components/AboutCompany';
 import BookPhone from '@/components/BookPhone';
+import SectionHouses from '@/components/SectionHouses';
+import MoreCollection from '@/components/MoreCollection';
+import FurnishingRange from '@/components/FurnishingRange';
+import FooterSection from '@/components/FooterSection';
 
 import { mapGetters } from 'vuex';
 export default {
   name: 'MainPage',
   computed: {
-    ...mapGetters('inSideHouse',['getInteriorHouse']),
+    ...mapGetters('inSideHouse', ['getInteriorHouse']),
+    ...mapGetters('catalogOfHouses', ['getCatalogHouses'])
   },
   components: {
     ButtonBlock,
     InSideHouse,
     AboutCompany,
     BookPhone,
+    SectionHouses,
+    MoreCollection,
+    FurnishingRange,
+    FooterSection,
   }
 }
 </script>
@@ -82,4 +99,20 @@ export default {
   line-height: 40px;
   color: #FFFFFF;
 }
+.title-houses {
+  font-family: 'Nunito';
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+  color: #323232;
+  margin-top: 122px;
+  margin-bottom: 45px;
+  }
+  .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #D7D6D6;
+    margin-top: 59px;
+    margin-bottom: 49px;
+  }
 </style>

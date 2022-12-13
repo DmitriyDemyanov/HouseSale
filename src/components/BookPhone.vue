@@ -5,14 +5,20 @@
 
     <div class="input-wrapper">
         <b-form-input class="phone-input"  placeholder="+13" />
+        
+        <ButtonMain text="send"/>
     </div>
 
   </div>
 </template>
 
 <script>
+import ButtonMain from '@/components/ButtonMain';
 export default {
   name: 'BookPhone',
+  components: {
+    ButtonMain,
+  }
 }
 </script>
 

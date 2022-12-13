@@ -25,7 +25,7 @@ export default {
 <style scoped>
 .header__wrapper {
   margin-top: 42px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
